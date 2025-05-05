@@ -1,0 +1,16 @@
+#
+# Folders
+
+node_modules/
+
+tmp/
+
+#
+# Files
+
+*.log
+*.local
+
+.env
+
+report.txt
