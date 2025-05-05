@@ -38,13 +38,13 @@ node index.js --url "https://example.org"
 With custom concurrency:
 
 ```bash
-node index.js --url "https://example.org" --concurrency 8
+node index.js --url "https://example.org" --concurrency 4
 ```
 
 Or using shorthand flags:
 
 ```bash
-node index.js -u "https://example.org" -c 5
+node index.js -u "https://example.org" -c 4
 ```
 
 ## Options
