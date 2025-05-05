@@ -169,7 +169,7 @@ async function crawl() {
       }
     }
 
-    await Promise.allSettled(
+    await Promise.all(
       batch.map(async ({ visiting, referring }) => {
         const html = await fetch(visiting, referring)
 
@@ -180,13 +180,13 @@ async function crawl() {
         // Loop through each link found in the HTML and
         // add it to the queue if it hasn't been visited or queued.
         for (const link of links) {
-          const normalizedLink = link.toLowerCase()
+          const normalized = link.toLowerCase()
 
           // If the link has not been visited or queued,
           // add it to the queue for further processing.
-          if (!visited.has(normalizedLink) && !queued.has(normalizedLink)) {
+          if (!visited.has(normalized) && !queued.has(normalized)) {
             // Add the link to the visited set.
-            queued.add(normalizedLink)
+            queued.add(normalized)
 
             // Push the link to the queue for further processing.
             queue.push({ visiting: link, referring: visiting })
